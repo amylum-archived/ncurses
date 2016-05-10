@@ -14,7 +14,7 @@ SOURCE_PATH = /tmp/source
 SOURCE_TARBALL = /tmp/source.tar.gz
 
 PATH_FLAGS = --prefix=/usr
-CFLAGS = -static -static-libgcc -Wl,-static -lc
+CFLAGS =
 
 .PHONY : default source manual container deps build version push local
 
