@@ -1,6 +1,8 @@
 ncurses
 ==========
 
+[![Build Status](https://img.shields.io/circleci/project/amylum/ncurses.svg)](https://circleci.com/gh/amylum/ncurses)
+[![GitHub release](https://img.shields.io/github/release/amylum/ncurses.svg)](https://github.com/amylum/ncurses/releases)
 [![MIT Licensed](http://img.shields.io/badge/license-MIT-green.svg)](https://tldrlegal.com/license/mit-license)
 
 Package repo for [ncurses](http://invisible-island.net/ncurses/)

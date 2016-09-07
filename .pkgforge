@@ -1,0 +1,25 @@
+name 'ncurses'
+org 'amylum'
+
+license 'COPYING'
+
+source(
+  type: 'tar',
+  url: 'http://ftp.gnu.org/gnu/ncurses/ncurses-6.0.tar.gz'
+)
+
+configure_flags(
+  prefix: '/usr/
+)
+
+harden
+
+build do
+  configure
+  make
+  install
+end
+
+test do
+  run 'ncurses6-config --version'
+end
