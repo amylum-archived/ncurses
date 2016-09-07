@@ -28,7 +28,7 @@ build do
     File.open("#{releasedir}/usr/lib/lib#{lib}.so", 'w') do |fh|
       fh << "INPUT(-l#{lib}w)"
     end
-  done
+  end
 
   File.open("#{releasedir}/usr/lib/libcursesw.so", 'w') do |fh|
     fh << 'INPUT(-lncursesw)'
