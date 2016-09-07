@@ -9,7 +9,12 @@ source(
 )
 
 configure_flags(
-  prefix: '/usr/
+  prefix: '/usr',
+  'with-shared': nil,
+  'with-normal': nil,
+  'without-cxx': nil,
+  'without-cxx-binding': nil,
+  'enable-widec': nil
 )
 
 harden
@@ -18,8 +23,20 @@ build do
   configure
   make
   install
+
+  %w(ncurses form panel menu).each do |lib|
+    File.open("#{releasedir}/usr/lib/lib#{lib}.so", 'w') do |fh|
+      fh << "INPUT(-l#{lib}w)"
+    end
+  done
+
+  File.open("#{releasedir}/usr/lib/libcursesw.so", 'w') do |fh|
+    fh << 'INPUT(-lncursesw)'
+  end
+  run "ln -s libncurses.so #{releasedir}/usr/lib/libcurses.so"
+
 end
 
 test do
-  run 'ncurses6-config --version'
+  run 'ncursesw6-config --version'
 end
