@@ -3,7 +3,7 @@ item do
     url_xpath
     url 'https://www.archlinux.org/packages/core/x86_64/ncurses/'
     xpath '//*[@id="pkgdetails"]/h2'
-    regex /^ncurses ([\d.]+)-\d+$/
+    regex /^ncurses ([\d.]+)(\+)?(\d+)?-\d+$/, '\1-\3'
   end
 
   actual do
