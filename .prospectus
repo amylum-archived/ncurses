@@ -1,9 +1,15 @@
+Prospectus.extra_dep('file', 'nokogiri')
+Prospectus.extra_dep('file', 'open-uri')
+
 item do
   expected do
-    url_xpath
-    url 'https://www.archlinux.org/packages/core/x86_64/ncurses/'
-    xpath '//*[@id="pkgdetails"]/h2'
-    regex /^ncurses ([\d.]+)(\+)?(\d+)?-\d+$/, '\1-\3'
+    static
+    url = 'http://invisible-mirror.net/archives/ncurses/current/'
+    page = Nokogiri::HTML(open(url)) { |config| config.strict.nonet }
+    hrefs = page.xpath('//a').map { |x| x[:href] }
+    latest = hrefs.select { |x| x =~ /^ncurses-.*\.tgz$/ }.sort.last
+    version = latest.match(/^ncurses-([\d.-]+)\.tgz$/)[1]
+    set version
   end
 
   actual do
