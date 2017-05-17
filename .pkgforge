@@ -5,7 +5,7 @@ license 'COPYING'
 
 source(
   type: 'tar',
-  url: 'http://invisible-mirror.net/archives/ncurses/current/ncurses-6.0-20170429.tgz'
+  url: 'http://invisible-mirror.net/archives/ncurses/current/ncurses-6.0-20170513.tgz'
 )
 
 configure_flags(
