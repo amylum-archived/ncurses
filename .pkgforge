@@ -11,6 +11,8 @@ source(
 
 configure_flags(
   prefix: '/usr',
+  'with-termlib': 'tinfo',
+  'with-ticlib': 'tic',
   'with-shared': nil,
   'with-normal': nil,
   'without-cxx': nil,
