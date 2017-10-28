@@ -27,17 +27,18 @@ build do
   make
   install
 
-  %w(ncurses form panel menu).each do |lib|
-    File.open("#{releasedir}/usr/lib/lib#{lib}.so", 'w') do |fh|
-      fh << "INPUT(-l#{lib}w)"
-    end
+  def lib_link(lib, target)
+    file = "#{releasedir}/usr/lib/lib#{lib}.so"
+    File.open(file, 'w') { |fh| fh << "INPUT(#{target})" }
   end
 
-  File.open("#{releasedir}/usr/lib/libcursesw.so", 'w') do |fh|
-    fh << 'INPUT(-lncursesw)'
-  end
+  %w(ncurses form panel menu).each { |lib| lib_link(lib, "-l#{lib}w") }
+
+  lib_link('cursesw', '-lncursesw')
   run "ln -s libncurses.so #{releasedir}/usr/lib/libcurses.so"
 
+  rm "#{releasedir}/usr/lib/libncursesw.so"
+  lib_link('ncursesw', 'libncursesw.so.6 -ltinfo')
 end
 
 test do
