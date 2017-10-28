@@ -37,7 +37,7 @@ build do
   lib_link('cursesw', '-lncursesw')
   run "ln -s libncurses.so #{releasedir}/usr/lib/libcurses.so"
 
-  rm "#{releasedir}/usr/lib/libncursesw.so"
+  rm "usr/lib/libncursesw.so"
   lib_link('ncursesw', 'libncursesw.so.6 -ltinfo')
 end
 
