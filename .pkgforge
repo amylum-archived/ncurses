@@ -5,8 +5,8 @@ license 'COPYING'
 
 source(
   type: 'tar',
-  url: 'https://invisible-mirror.net/archives/ncurses/current/ncurses-6.1-20180127.tgz',
-  checksum: 'e1fcc71f96671dca585612c7fd953cb06eb6a6658d5d783c2e841edebfcfc822'
+  url: 'https://invisible-mirror.net/archives/ncurses/current/ncurses-6.1-20180203.tgz',
+  checksum: 'fac9db9460f271ee632af386a5b502d43a25d7cf14138e3d3166d4bedc4f6cb0'
 )
 
 configure_flags(
