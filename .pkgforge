@@ -1,4 +1,4 @@
-oname 'ncurses'
+name 'ncurses'
 org 'amylum'
 
 license 'COPYING'
