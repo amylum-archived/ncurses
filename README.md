@@ -1,7 +1,7 @@
 ncurses
 ==========
 
-[![Build Status](https://img.shields.io/circleci/project/amylum/ncurses/master.svg)](https://circleci.com/gh/amylum/ncurses)
+[![Build Status](https://img.shields.io/travis/com/amylum/ncurses.svg)](https://travis-ci.com/amylum/ncurses)
 [![GitHub release](https://img.shields.io/github/release/amylum/ncurses.svg)](https://github.com/amylum/ncurses/releases)
 [![MIT Licensed](http://img.shields.io/badge/license-MIT-green.svg)](https://tldrlegal.com/license/mit-license)
 
